@@ -3,7 +3,7 @@ import Input from "./components/Input";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 
 function App() {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState();
   const [from, setFrom] = useState();
   const [to, setTo] = useState();
   const [convertedAmount, setConvertedAmount] = useState(0);
@@ -61,7 +61,9 @@ function App() {
             currencyOptions={currencies}
             onCurrencyChange={(currency) => setFrom(currency)}
             selectCurrency={from}
-            onAmountChange={(val) => setAmount(val)}
+            onAmountChange={(val) =>{
+             // console.log("Amount changed:", val);
+              return val? setAmount(val):setAmount()}}
           />
 
          

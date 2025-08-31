@@ -2,7 +2,7 @@ import React, { useId } from "react";
 
 function Input({
   label,
-  amount,
+  amount='',
   onAmountChange,
   onCurrencyChange,
   currencyOptions = [],
@@ -34,7 +34,7 @@ function Input({
           type="number"
           placeholder="Enter amount"
           disabled={amountDisable}
-          value={amount ?? ""}
+          value={amount }
           onChange={(e) =>
             onAmountChange && onAmountChange(Number(e.target.value))
           }
